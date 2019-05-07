@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # vueui
 
 ## Project setup
@@ -27,3 +28,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+# newpc
+newpc new
+>>>>>>> 9e28be7a67ded4a424bf808cec098b3a4063a2fb
