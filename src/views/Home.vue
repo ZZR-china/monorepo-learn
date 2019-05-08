@@ -74,24 +74,48 @@
           </el-row>
         </div>
       </swiper-slide>
-      <swiper-slide data-hash="slide3">
+      <swiper-slide class="part3" data-hash="slide3">
         <HomeHeader />
         <div>
-          <div>妙寄是一个开放的平台</div>
-          <div>快递驿站、社区服务、电商合作、物业合作等均可合作</div>
-          <el-row>
-            <el-col :span="12">
-              
-            </el-col>
-            <el-col :span="12">
-
+          <img src="../assets/images/slide3.png" alt="slide3">
+        </div>
+      </swiper-slide>
+      <swiper-slide class="part4" data-hash="slide4">
+        <HomeHeader />
+        <div class="main">
+          <div class="title">合作品牌</div>
+          <div class="tips">妙寄已和多家快递品牌建立合作关系</div>
+          <el-row :gutter="0" justify="center" class="brand">
+            <el-col class="brand-col" :span="6" v-for="item in part4List" :key="item.key">
+              <div class="show">
+                <img :src="item.show" alt="">
+              </div>
+              <div class="hover">
+                <img :src="item.hover" alt="">
+              </div>
             </el-col>
           </el-row>
         </div>
       </swiper-slide>
-      <swiper-slide data-hash="slide4">Slide 4</swiper-slide>
-      <swiper-slide data-hash="slide5">Slide 5</swiper-slide>
-      <swiper-slide data-hash="slide6">Slide 6</swiper-slide>
+      <swiper-slide class="part5" data-hash="slide5">
+        <HomeHeader />
+        <div class="main">
+          <div class="title">目前规模</div>
+          <div class="tips">截至目前妙寄全国站点分布</div>
+          <img src="../assets/images/hom_map.png" alt="part5home">
+        </div>
+      </swiper-slide>
+      <swiper-slide class="part6" data-hash="slide6">
+        <HomeHeader />
+        <el-row>
+          <el-col :span="12">
+            <img src="../assets/images/hom_pho.png" alt="phone">
+          </el-col>
+          <el-col :span="10">
+            <HomeForm></HomeForm>
+          </el-col>
+        </el-row>
+      </swiper-slide>
       <div class="swiper-pagination swiper-pagination-container" slot="pagination"></div>
     </swiper>
   </div>
@@ -100,12 +124,14 @@
 <script>
 // @ is an alias to /src
 import HomeHeader from '@/components/HomeHeader.vue'
+import HomeForm from '@/components/HomeForm.vue'
 import MinLine from '@/components/MinLine.vue'
 
 export default {
   name: 'home',
   components: {
     HomeHeader,
+    HomeForm,
     MinLine
   },
   data () {
@@ -204,6 +230,88 @@ export default {
           footerImg: require('../assets/images/hom_hea.png'),
           middletext: '心与心的连接',
           footertext: '妙寄是一种连接节点'
+        },
+      ],
+      part4List: [
+        {
+          show: require('../assets/images/zho2.png'),
+          hover: require('../assets/images/zho.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/yun2.png'),
+          hover: require('../assets/images/yun.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/yuan2.png'),
+          hover: require('../assets/images/yuan.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/bai2.png'),
+          hover: require('../assets/images/bai.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/shun2.png'),
+          hover: require('../assets/images/shun.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/jing2.png'),
+          hover: require('../assets/images/jing.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/sud2.png'),
+          hover: require('../assets/images/sud.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/min2.png'),
+          hover: require('../assets/images/min.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/ma2.png'),
+          hover: require('../assets/images/ma.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/pin2.png'),
+          hover: require('../assets/images/pin.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/de2.png'),
+          hover: require('../assets/images/de.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/ke2.png'),
+          hover: require('../assets/images/ke.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/bi2.png'),
+          hover: require('../assets/images/bi.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/yi2.png'),
+          hover: require('../assets/images/yi.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/fei2.png'),
+          hover: require('../assets/images/fei.png'),
+          key: 1,
+        },
+        {
+          show: require('../assets/images/su2.png'),
+          hover: require('../assets/images/su.png'),
+          key: 1,
         },
       ]
     } 
@@ -304,6 +412,7 @@ export default {
         }
       }
     }
+
     .part2 {
       .part2__circle {
         width: 70px;
@@ -356,6 +465,52 @@ export default {
             font-size: 14px;
           }
         }
+      }
+    }
+
+    .part3 {
+      div {
+        img {
+          width: 100vw;
+          height: 100vh;
+          margin-top: -68px;
+        }
+      }
+    }
+
+    .part4 {
+      .main {
+        width: 100%;
+        height: calc(~"100% - 68px");
+        background: url('../assets/images/hom_par.png') no-repeat;
+        background-size: 100% 100%;
+        .brand {
+          &-col {
+            &:hover {
+              .show {
+                display: none;
+              }
+              .hover {
+                display: block;
+              }
+            }
+            .show {
+              
+            }
+            .hover {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .part5 {
+      .main {
+        width: 100%;
+        height: calc(~"100% - 68px");
+        background: url('../assets/images/hom_pre.png') no-repeat;
+        background-size: 100% 100%;
       }
     }
   }

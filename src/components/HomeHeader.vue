@@ -39,6 +39,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
 .home-header {
+  height: 68px;
   box-shadow: 0px 2px 1px #f5f5f5;
   .el-row {
     .menu {
